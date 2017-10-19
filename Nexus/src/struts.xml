@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="simple" />
+	<package name="com.nexus.action" extends="struts-default"
+		namespace="/">
+
+		<action name="login" class="com.nexus.action.LoginAction"
+			method="logar">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		
+		<action name="logout" class="com.nexus.action.LoginAction"
+			method="logout">
+			<result name="expired">expired.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+
+		<action name="cadastrarUsuario" class="com.nexus.action.CadastroAction"
+			method="CadastrarUsuario">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="CadastrarCreche" class="com.nexus.action.CadastroAction"
+			method="CadastrarCreche">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="cadastrarAluno" class="com.nexus.action.CadastroAction"
+			method="CadastrarAluno">
+			<result name="success">success.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		
+		<action name="pesquisarVaga" class="com.nexus.dao.PontoDAO"
+			method="execute">
+			<result name="success">ponto.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="criarVaga" class="com.nexus.action.VagaAction"
+			method="CriarVaga">
+			<result name="success">vagaCriada.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+	</package>
+</struts>
