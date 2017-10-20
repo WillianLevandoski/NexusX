@@ -88,10 +88,7 @@ public class CadastroAction extends ActionSupport implements ServletRequestAware
 		return result; 
 	
 	}
-	
 
-	
-	
 	public HttpSession getHs() {
 		return hs;
 	}
